@@ -1,0 +1,700 @@
+{
+ "_": "THE LAWS, AS DATA. tools/build.py renders index.html from this and REFUSES if any law is missing any of its seven parts or its keys. A law without a key is a candidate, not a law, and the build says so on the page rather than letting it pass.",
+ "title": "Law",
+ "lede": "What the universe is, through cables and mathematics and physics: gravity, electrons, photons, electromagnetic forces. The laws any system here must be modelled against.",
+ "format": [
+  "The law in one sentence with no symbols.",
+  "What it means in plain words.",
+  "In the real world: what breaks the ideal case, because nothing is ever ideal.",
+  "The maths, with every symbol named.",
+  "A worked number from a cable, a cell or a network.",
+  "How to show it is wrong.",
+  "The keys: where every number came from, and what happens if it has none.",
+  "The sentence that holds the rest: every drop is the ocean, and the practice is to make one true drop before any ocean scale claim."
+ ],
+ "status_meanings": {
+  "exact": "fixed by definition in the SI. Not measured, not arguable.",
+  "standard": "a published standard says so. The clause is named.",
+  "published": "a peer reviewed paper says so. The paper is named.",
+  "derived": "follows by arithmetic from things above it.",
+  "measured": "a command was run here and can be run again.",
+  "candidate": "quoted from memory or illustrative. NOT yet verified. Do not build on it."
+ },
+ "areas": [
+  {
+   "name": "Light",
+   "laws": [
+    {
+     "id": "L1",
+     "title": "One photon frees one electron, or none",
+     "say": "Light arrives in lumps. A single lump either carries enough energy to free one electron, or it does not, and no amount of dim light ever adds up to enough.",
+     "mean": "Brightness changes how many electrons you get. Colour changes whether you get any at all. This is why a solar cell does nothing under infrared however bright you make it, and it is the founding law of the solar cell. Einstein published it in 1905 and it is what he was given the Nobel Prize for, not relativity.",
+     "real": "A real site never sees the test spectrum. Cloud, air mass, dust and angle of incidence remove photons before the physics gets a chance, and soiling does it slowly enough that nobody notices. The threshold itself moves: silicon's gap falls by roughly 0.0003 eV per kelvin, so a hot cell absorbs slightly further into the infrared while losing more voltage than it gains. Both effects are real and they pull opposite ways.",
+     "eq": "E = h &times; f&nbsp;&nbsp;&nbsp;and, in the units used for cells,&nbsp;&nbsp;&nbsp;E (eV) = 1239.84 &divide; &lambda; (nm)",
+     "symbols": [
+      "<b>E</b> the energy carried by one photon.",
+      "<b>h</b> Planck's constant. A fixed number of nature, not a choice.",
+      "<b>f</b> the frequency of the light, in cycles per second.",
+      "<b>&lambda;</b> the wavelength, in nanometres. A nanometre is a millionth of a millimetre.",
+      "<b>eV</b> an electron volt: the energy one electron gains falling through one volt. A convenient size of unit for one electron, the way a kilometre is convenient for a road."
+     ],
+     "work": "Silicon needs about 1.12 eV to free an electron. 1239.84 &divide; 1.12 = <b>1107 nm</b>. Light longer than that passes through a silicon cell as if it were a window, and everything past it is simply unavailable however much of it arrives.",
+     "wrong": "Produce current from a silicon cell using light longer than about 1107 nm, at any intensity.",
+     "keys": [
+      [
+       "h = 6.62607015 &times; 10<sup>&minus;34</sup> J s",
+       "SI, 26th CGPM (2018) Resolution 1, in force 20 May 2019",
+       "exact"
+      ],
+      [
+       "1239.84 eV nm",
+       "hc/e, from three exactly defined constants",
+       "derived"
+      ],
+      [
+       "photoelectric effect",
+       "Einstein, Annalen der Physik 322(6) 132&ndash;148, 1905",
+       "published"
+      ],
+      [
+       "silicon gap 1.12 eV at 300 K",
+       "widely quoted; Green 1990 gives 1.1242 eV. The third digit is not settled here",
+       "candidate"
+      ],
+      [
+       "dEg/dT &asymp; &minus;0.0003 eV/K",
+       "quoted from memory",
+       "candidate"
+      ]
+     ]
+    },
+    {
+     "id": "L2",
+     "title": "A fixed supply of photons sets a maximum current",
+     "say": "Sunlight delivers a countable number of usable photons per second, so there is a current a silicon cell can never exceed, no matter what else is improved.",
+     "mean": "This is a ceiling set by the sun and by silicon, not by manufacturing. It tells you how much room is left to win, which is a more useful question than how good a cell is.",
+     "real": "Real cells reach 40 to 42 mA/cm&sup2;, not the ceiling. The missing current goes to front surface reflection, shading by fingers and busbars, incomplete absorption in the near infrared, and carriers that recombine before they are collected. Every one of those is an engineering problem with a cost attached, which is why the last two milliamps are the expensive ones.",
+     "eq": "J = q &times; &Phi;",
+     "symbols": [
+      "<b>J</b> current per unit of area, in amperes per square metre.",
+      "<b>q</b> the charge on one electron, in coulombs. Also fixed by definition.",
+      "<b>&Phi;</b> the number of photons landing per square metre per second that are energetic enough to be used."
+     ],
+     "work": "The reference spectrum AM1.5G delivers 1000 W/m&sup2;. Integrating the part of it above silicon's threshold gives of order 2.8 &times; 10<sup>21</sup> photons per square metre per second, so q &times; &Phi; comes out near <b>44 mA/cm&sup2;</b>. Published maxima for silicon sit around 43.6 to 44.3 mA/cm&sup2; depending on how the integration is done.",
+     "wrong": "Measure a single junction silicon cell above its integration limit, around 44 mA/cm&sup2;, under one sun at standard test conditions.",
+     "keys": [
+      [
+       "q = 1.602176634 &times; 10<sup>&minus;19</sup> C",
+       "SI, 26th CGPM (2018) Resolution 1",
+       "exact"
+      ],
+      [
+       "AM1.5G reference spectrum, 1000 W/m&sup2;",
+       "IEC 60904-3; ASTM G173-03",
+       "standard"
+      ],
+      [
+       "&Phi; &asymp; 2.8 &times; 10<sup>21</sup> m<sup>&minus;2</sup> s<sup>&minus;1</sup> above 1.12 eV",
+       "NOT integrated here. Quoted from memory and rounded",
+       "candidate"
+      ],
+      [
+       "maximum photocurrent 43.6&ndash;44.3 mA/cm&sup2;",
+       "literature range, not recomputed here",
+       "candidate"
+      ]
+     ]
+    },
+    {
+     "id": "L3",
+     "title": "Excess photon energy becomes heat, and that sets the ceiling",
+     "say": "A photon carrying more energy than the cell needs gives the surplus away as heat, and in a single layer of silicon nothing can be done about it.",
+     "mean": "Blue light carries around 3 eV. Silicon takes 1.12 and wastes the rest as warmth. This is the largest single loss in a solar cell and it is not a defect, it is the physics of one material having one threshold. Stacking materials with different thresholds is the only way past it, which is what a tandem cell is.",
+     "real": "Every ceiling here is quoted at 25 &deg;C, and a module on a roof in July runs at 45 to 65 &deg;C. At a temperature coefficient around &minus;0.3 to &minus;0.4 % per kelvin, a cell rated 22% delivers materially less all afternoon. The heat that L3 says is unavoidable is the same heat that then degrades the output, so the loss is paid twice. Mounting, ventilation and albedo therefore change the answer more than a point of cell efficiency does.",
+     "eq": "loss per photon = E<sub>photon</sub> &minus; E<sub>gap</sub>",
+     "symbols": [
+      "<b>E<sub>photon</sub></b> what the photon brought.",
+      "<b>E<sub>gap</sub></b> what the material needs. For silicon, about 1.12 eV."
+     ],
+     "work": "Add that loss across the whole spectrum and you get the single junction ceiling of <b>33.7%</b>, at an optimum gap near 1.34 eV. Silicon, at 1.12 eV, is lower, and its own ceiling is about <b>29.4%</b> once Auger recombination is counted. Records sit near 27%. A single junction silicon cell claiming 32% is a tandem, under concentration, or wrong.",
+     "wrong": "A single junction silicon cell above 29.4% under one sun at standard test conditions.",
+     "keys": [
+      [
+       "detailed balance limit",
+       "Shockley and Queisser, J. Appl. Phys. 32(3) 510&ndash;519, 1961",
+       "published"
+      ],
+      [
+       "33.7% at 1.34 eV",
+       "modern recomputation of the 1961 method, not the figure in that paper",
+       "published"
+      ],
+      [
+       "silicon limit 29.43%",
+       "Richter, Hermle and Glunz, IEEE J. Photovoltaics 3(4) 1184&ndash;1191, 2013",
+       "published"
+      ],
+      [
+       "temperature coefficient &minus;0.3 to &minus;0.4 %/K",
+       "typical datasheet range, not a standard",
+       "candidate"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Cables",
+   "laws": [
+    {
+     "id": "L4",
+     "title": "Stress is highest at the conductor surface, so the conductor's shape decides the life",
+     "say": "In a round cable the electrical stress is greatest right at the surface of the conductor and falls away with distance, so any flat, whisker or dent on that surface is where the cable will eventually fail.",
+     "mean": "This is the reason for circular compacted conductors, and the reason the conductor screen exists at all: to smooth a field that the geometry could not. It is also why symmetry is rewarded everywhere in this work. Things fail at the peak, not the average, and symmetry lowers the peak for a given average.",
+     "real": "The formula assumes perfect concentricity and perfectly uniform insulation, and neither exists. Real cables have eccentricity, screen irregularity, contaminants and microvoids, and every one of them is a local stress raiser the ideal equation cannot see. Add water, and you get treeing at exactly those sites. Add thermomechanical cycling over decades, and the geometry moves. This is why a cable is qualified by type test and partial discharge measurement rather than by calculation, and why installation damage kills more cables than design error.",
+     "eq": "E(r) = U<sub>0</sub> &divide; ( r &times; ln(R<sub>o</sub> &divide; R<sub>i</sub>) )",
+     "symbols": [
+      "<b>E(r)</b> the stress at distance r from the centre, in volts per metre.",
+      "<b>U<sub>0</sub></b> the voltage between conductor and earth.",
+      "<b>R<sub>i</sub></b> the radius of the conductor. <b>R<sub>o</sub></b> the radius over the insulation.",
+      "<b>ln</b> the natural logarithm: how many times you must multiply the number 2.718 by itself to reach the number in the bracket. It appears because the field spreads over a growing circumference.",
+      "Because r is on the bottom, E is largest when r is smallest, which is at the conductor surface."
+     ],
+     "work": "A 19/33 kV cable, so U<sub>0</sub> = 19 kV. Take a conductor radius of 16.85 mm and 8 mm of insulation, so R<sub>o</sub> = 24.85 mm. E<sub>max</sub> = 19000 &divide; (0.01685 &times; ln(1.475)) = 19000 &divide; (0.01685 &times; 0.3886) = <b>2.9 MV/m, which is 2.9 kV/mm</b>.",
+     "wrong": "Find the stress peak anywhere other than the conductor surface in a concentric round cable with uniform insulation.",
+     "keys": [
+      [
+       "E(r) in a coaxial geometry",
+       "Gauss's law in cylindrical symmetry",
+       "derived"
+      ],
+      [
+       "19/33 kV designation",
+       "BS 7870-4.10",
+       "standard"
+      ],
+      [
+       "conductor radius 16.85 mm, insulation 8 mm",
+       "illustrative dimensions, not from a datasheet",
+       "candidate"
+      ],
+      [
+       "XLPE MV design stress 3&ndash;5 kV/mm",
+       "quoted from memory",
+       "candidate"
+      ]
+     ]
+    },
+    {
+     "id": "L5",
+     "title": "Alternating current does not use the middle of a thick conductor",
+     "say": "At mains frequency the current crowds into the outside of a conductor, so beyond a certain thickness the metal in the middle is paid for and not used.",
+     "mean": "It is why very large conductors are built as separately insulated segments, Milliken construction, rather than as one solid mass. And it is why none of this applies on the 1500 V DC side: direct current has no frequency, so it uses the whole cross section, and DC sizing is thermal limit and volt drop only.",
+     "real": "Skin effect is only the part a single conductor does to itself. In a real trench the proximity effect from the adjacent phases, and the eddy and circulating currents induced in screens and armour, often matter more. That is the whole reason IEC 60287 exists and why it is not a one line calculation: the AC resistance you must use depends on the formation, the spacing, whether the screens are bonded at both ends, and what else is in the trench.",
+     "eq": "&delta; = &radic;( 2&rho; &divide; (&omega;&mu;) )&nbsp;&nbsp;&nbsp;where&nbsp;&nbsp;&omega; = 2&pi;f",
+     "symbols": [
+      "<b>&delta;</b> the skin depth: the depth at which the current has fallen to about 37% of its value at the surface.",
+      "<b>&rho;</b> resistivity, how strongly the metal resists. <b>&mu;</b> permeability, how the metal carries magnetism.",
+      "<b>&omega;</b> angular frequency, which is the frequency <b>f</b> in hertz multiplied by 2&pi;, because the maths of anything rotating counts in radians.",
+      "<b>&radic;</b> square root: the number which, multiplied by itself, gives what is inside."
+     ],
+     "work": "At 50 Hz: copper <b>9.3 mm</b>, aluminium <b>12.0 mm</b>. A 400 mm&sup2; round conductor is about 22.6 mm across, so its radius already sits at copper's skin depth. That is where AC resistance starts to exceed DC resistance meaningfully and where segmental construction starts to pay.",
+     "wrong": "Measure a solid 1000 mm&sup2; conductor at 50 Hz and find its AC resistance equal to its DC resistance.",
+     "keys": [
+      [
+       "&delta; = &radic;(2&rho;/&omega;&mu;)",
+       "solution of Maxwell's equations in a good conductor",
+       "derived"
+      ],
+      [
+       "&rho; copper 1.7241 &times; 10<sup>&minus;8</sup> &Omega;m at 20 &deg;C",
+       "International Annealed Copper Standard",
+       "standard"
+      ],
+      [
+       "&rho; aluminium 2.8264 &times; 10<sup>&minus;8</sup> &Omega;m at 20 &deg;C",
+       "commonly quoted value, standard clause not cited here",
+       "candidate"
+      ],
+      [
+       "9.3 mm and 12.0 mm at 50 Hz",
+       "computed from the two resistivities above",
+       "derived"
+      ],
+      [
+       "AC resistance in a real installation",
+       "IEC 60287-1-1, skin and proximity effect factors",
+       "standard"
+      ]
+     ]
+    },
+    {
+     "id": "L6",
+     "title": "The tightest packing of circles is a honeycomb, and stranded cable has always known it",
+     "say": "Circles pack most tightly in a honeycomb arrangement, and no arrangement can ever beat it. Stranded conductors are built that way, and trefoil is the same pattern with three circles.",
+     "mean": "This is a proved theorem, not a convention. Ropemakers and cablemakers arrived at it by hand centuries before it was proved, which is why the standard strandings are the numbers they are.",
+     "real": "A compacted conductor is not circles any more, which is the point of compacting it: the theoretical 0.9069 is the ceiling for round wires and compaction goes past it by deforming them. Real fill factor depends on the lay length, the wire tolerance and the compaction dies, so it is a manufacturing outcome, not a calculation. Trefoil's electrical reward also assumes the three cables actually touch and stay touching, which cleating and backfill decide, not the drawing.",
+     "eq": "density = &pi; &divide; &radic;12 &asymp; 0.9069&nbsp;&nbsp;&nbsp;ring counts: 3n&sup2; + 3n + 1 = 1, 7, 19, 37, 61, 91",
+     "symbols": [
+      "<b>density</b> the fraction of the area actually filled by metal. 0.9069 means just over 90%, and the remaining 10% is unavoidable gap.",
+      "<b>3n&sup2; + 3n + 1</b> the centred hexagonal numbers. Put n = 0, 1, 2, 3 and you get 1, 7, 19, 37: one wire, then a ring of 6 around it, then a ring of 12, then a ring of 18."
+     ],
+     "work": "IEC 60228 Class 2 strandings are <b>7, 19, 37, 61, 91</b>, which are exactly the centred hexagonal numbers. Compaction then pushes fill factor from about 0.75 up past 0.90, buying what circle packing says round wires cannot reach, and smoothing the field concentrators at the same time, which is L4 paying out again.",
+     "wrong": "Pack circles in a plane more densely than 0.9069.",
+     "keys": [
+      [
+       "density &pi;/&radic;12",
+       "Thue 1910; rigorous proof Fejes T&oacute;th 1940",
+       "published"
+      ],
+      [
+       "3n&sup2; + 3n + 1",
+       "arithmetic",
+       "exact"
+      ],
+      [
+       "Class 2 strandings 7, 19, 37, 61, 91",
+       "IEC 60228, conductor classes. Table not cited to clause here",
+       "candidate"
+      ],
+      [
+       "fill factor 0.75 to above 0.90",
+       "quoted from memory",
+       "candidate"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Current and heat",
+   "laws": [
+    {
+     "id": "L7",
+     "title": "Heat rises with the square of the current",
+     "say": "Current passing through resistance makes heat, and doubling the current does not double the heat, it quadruples it.",
+     "mean": "This is the reason a cable has a rating at all. The limit is not the metal failing, it is the insulation cooking. The square is why a 10% overload is tolerable and a 40% one is not.",
+     "real": "This is the law where the ideal case is least useful, and where the real work is. I&sup2;R tells you the heat produced; it says nothing about where the heat goes, and the rating is entirely decided by where the heat goes. Soil thermal resistivity is typically taken as 0.9 to 1.2 K m/W, and a soil that dries out around a hot cable can double it, which is a runaway because the drier it gets the hotter it gets. Then depth of laying, grouping with other circuits, ducts versus direct burial, backfill, road crossings, solar gain on a surface run, and the daily and seasonal load cycle. IEC 60287 is the steady state calculation and IEC 60853 the cyclic one, and neither replaces knowing the ground.",
+     "eq": "P = I&sup2; &times; R",
+     "symbols": [
+      "<b>P</b> power lost as heat, in watts.",
+      "<b>I</b> current in amperes. <b>I&sup2;</b> means I multiplied by itself.",
+      "<b>R</b> resistance in ohms. Resistance rises with temperature, so a hot cable is a worse cable, which feeds back into its own heating."
+     ],
+     "work": "400 mm&sup2; aluminium at a quoted 0.0778 &Omega;/km at 20 &deg;C, about 0.0997 &Omega;/km at 90 &deg;C. At 500 A: 500 &times; 500 &times; 0.0997 = <b>24.9 kW of heat per kilometre per phase</b>. At 700 A it is 48.8 kW, not 34.9 kW.",
+     "wrong": "Measure heating that rises in proportion to current rather than to its square, in a fixed resistance.",
+     "keys": [
+      [
+       "P = I&sup2;R",
+       "Joule's law",
+       "derived"
+      ],
+      [
+       "400 mm&sup2; aluminium, 0.0778 &Omega;/km at 20 &deg;C",
+       "IEC 60228 conductor resistance table, quoted from memory. Clause not cited",
+       "candidate"
+      ],
+      [
+       "temperature coefficient of aluminium &asymp; 0.00403 /K",
+       "quoted from memory",
+       "candidate"
+      ],
+      [
+       "current rating method",
+       "IEC 60287 steady state; IEC 60853 cyclic",
+       "standard"
+      ],
+      [
+       "soil thermal resistivity 0.9&ndash;1.2 K m/W",
+       "typical design assumption, site dependent",
+       "candidate"
+      ]
+     ]
+    },
+    {
+     "id": "L8",
+     "title": "Every metre of cable takes voltage away",
+     "say": "Voltage arriving at the far end is always less than voltage sent, and the loss grows with current and with length.",
+     "mean": "On a PV string this is why cable is often sized for volt drop rather than for current. The conductor is thermally fine and electrically too lossy.",
+     "real": "The quoted resistance is at 20 &deg;C and the cable will not be at 20 &deg;C: a conductor at 90 &deg;C is about 28% more resistive, so the volt drop you calculated is optimistic by that much. On AC, reactance overtakes resistance as conductor size grows, so above roughly 120 mm&sup2; the drop stops improving the way the metal suggests. On the DC side the current follows irradiance, so the worst case is not always noon, and a string that meets 1% at STC can exceed it on a cold bright morning when both current and voltage are high.",
+     "eq": "DC: &Delta;V = 2 &times; I &times; R &times; L&nbsp;&nbsp;&nbsp;&nbsp;three phase AC: &Delta;V = &radic;3 &times; I &times; L &times; (R cos&phi; + X sin&phi;)",
+     "symbols": [
+      "<b>&Delta;V</b> the voltage lost. The symbol &Delta; simply means the change in.",
+      "<b>2 &times;</b> on DC because the current goes out on one conductor and back on the other, so you pay twice.",
+      "<b>R</b> resistance per unit length, <b>X</b> reactance per unit length, which is the opposition caused by the magnetic field rather than by the metal.",
+      "<b>cos&phi;</b> the power factor: how much of the current is doing useful work. At unity it is 1."
+     ],
+     "work": "A 6 mm&sup2; copper PV string at a quoted 3.08 &Omega;/km carrying 15 A over 50 m: &Delta;V = 2 &times; 15 &times; 3.08 &times; 0.05 = <b>4.6 V</b>. On a 1500 V system that is 0.31%. Correct the resistance to 90 &deg;C and it becomes about 5.9 V, or 0.39%.",
+     "wrong": "Measure the voltage at both ends and find no difference under load.",
+     "keys": [
+      [
+       "volt drop method",
+       "IEC 60364-5-52, Annex G",
+       "standard"
+      ],
+      [
+       "6 mm&sup2; copper class 2, 3.08 &Omega;/km at 20 &deg;C",
+       "IEC 60228 table, quoted from memory. Clause not cited",
+       "candidate"
+      ],
+      [
+       "PV DC cable type H1Z2Z2-K, 1.5 kV DC",
+       "EN 50618; also IEC 62930",
+       "standard"
+      ],
+      [
+       "PV system design and derating",
+       "IEC 62548",
+       "standard"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Networks",
+   "laws": [
+    {
+     "id": "L9",
+     "title": "What flows into a junction flows out of it",
+     "say": "Current does not pile up anywhere. Everything arriving at a junction leaves it, and voltages around any closed loop cancel exactly.",
+     "mean": "This is what makes a network solvable at all, and it is the check behind every load flow. A network that does not balance has a measurement error or a missing connection. It never has a physics exception.",
+     "real": "The law holds perfectly and your data does not. Current transformers saturate under fault, meters have class errors of a per cent or more, time stamps are not aligned, and there are always connections nobody drew. So an imbalance is a question about the model or the instruments, never about the physics, and knowing which of those three it is is the actual skill.",
+     "eq": "at any junction: &Sigma; I = 0&nbsp;&nbsp;&nbsp;&nbsp;around any loop: &Sigma; V = 0",
+     "symbols": [
+      "<b>&Sigma;</b> means add up all of them. It is shorthand for a list, nothing more.",
+      "Currents in count as positive, currents out as negative, so adding them gives zero."
+     ],
+     "work": "A busbar taking 300 A and 450 A on two incomers and feeding three circuits must send out exactly 750 A. If the meters say 742 A you have 8 A of measurement error, or 8 A going somewhere nobody has drawn.",
+     "wrong": "Find a junction where in and out differ by more than the instruments' error, with every connection accounted for.",
+     "keys": [
+      [
+       "Kirchhoff's current and voltage laws",
+       "Kirchhoff, 1845",
+       "published"
+      ],
+      [
+       "consequence of charge conservation",
+       "Maxwell's equations",
+       "derived"
+      ]
+     ]
+    },
+    {
+     "id": "L10",
+     "title": "Three phases carry the same power with less metal",
+     "say": "Three conductors carrying alternating current a third of a cycle apart deliver steady power, and need less copper than doing the same job any other way.",
+     "mean": "The three currents sum to zero at every instant when the load is balanced, so in principle nothing has to return. That cancellation is also why trefoil works: the fields outside three balanced conductors very nearly cancel.",
+     "real": "Balanced is an assumption, not an observation. Real loads are unbalanced, so something does return and the neutral carries it. Harmonics, particularly the third and its multiples, add in the neutral rather than cancelling, so a neutral can carry more than a phase in a building full of switched mode supplies. And the trefoil cancellation only holds if the three cables stay in formation for the whole route, which the joint bays and the road crossings decide.",
+     "eq": "P = &radic;3 &times; V<sub>L</sub> &times; I &times; cos&phi;",
+     "symbols": [
+      "<b>V<sub>L</sub></b> the voltage between any two lines, which is the number a system is named by: 33 kV, 132 kV.",
+      "<b>&radic;3</b>, about 1.732, appears because the three phases are 120 degrees apart, not because anyone chose it.",
+      "<b>cos&phi;</b> power factor again."
+     ],
+     "work": "33 kV, 500 A, power factor 0.95: 1.732 &times; 33000 &times; 500 &times; 0.95 = <b>27.2 MW</b>.",
+     "wrong": "Meter the three phases and the delivered power and find the &radic;3 absent.",
+     "keys": [
+      [
+       "P = &radic;3 V<sub>L</sub> I cos&phi;",
+       "trigonometry of three phases 120 degrees apart",
+       "derived"
+      ],
+      [
+       "neutral harmonic loading",
+       "triplen harmonics add rather than cancel; standard result",
+       "published"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Looking",
+   "laws": [
+    {
+     "id": "L11",
+     "title": "Everything you see is the past",
+     "say": "Nothing is observed as it is now. Everything is observed as it was when the signal left, and the further away it is, the older the news.",
+     "mean": "In the sky this is why distance is time. On a network it is why protection has to be designed around the fact that the far end does not yet know.",
+     "real": "Signals in cable travel well below the speed of light and the exact figure depends on the insulation and the construction, so any scheme that measures distance by timing has to be calibrated on the actual route rather than assumed. Add relay operate times, communications latency and breaker travel, and the physics delay is usually the smallest term in the total.",
+     "eq": "t = d &divide; c",
+     "symbols": [
+      "<b>t</b> the delay. <b>d</b> the distance. <b>c</b> the speed of light.",
+      "In a cable, signals travel slower than in vacuum, typically around half c in XLPE."
+     ],
+     "work": "Sunlight is <b>8 minutes 20 seconds</b> old when it reaches a panel. A signal along 100 km of cable at about half the speed of light arrives roughly <b>0.6 milliseconds</b> later, which is around 11 electrical degrees at 50 Hz.",
+     "wrong": "Carry information faster than c.",
+     "keys": [
+      [
+       "c = 299 792 458 m/s",
+       "SI, 17th CGPM (1983): the metre is defined by it",
+       "exact"
+      ],
+      [
+       "8 min 20 s",
+       "mean Earth&ndash;Sun distance divided by c",
+       "derived"
+      ],
+      [
+       "velocity of propagation &asymp; 0.5c in XLPE",
+       "quoted from memory; construction dependent",
+       "candidate"
+      ]
+     ]
+    },
+    {
+     "id": "L12",
+     "title": "Past a certain crowding, things cannot be told apart",
+     "say": "However good the instrument, once sources are packed closer than it can separate them, you stop counting objects and start looking at a blur.",
+     "mean": "Astronomy calls this source confusion and stops surveys there rather than pretending. It is the same reason a drawing of 37.9 billion things on a million pixels is white and says nothing. The honest response is to say a thing is unresolved and state how many it holds, not to thin it out until it looks manageable.",
+     "real": "The instrument is worse than the theory says. A screen has non square pixels, scaling, compression and a viewer who is not a photon counter, so the practical limit arrives earlier than the arithmetic. This is why the criterion used here is one per thirty pixels rather than one per pixel: at one per pixel a random field is 63% covered and unreadable, which was tried and looked exactly like the white flash it was meant to cure.",
+     "eq": "confusion begins at roughly one source per 20 to 50 resolution elements",
+     "symbols": [
+      "A <b>resolution element</b> is the smallest patch the instrument can separate. On a screen it is a pixel.",
+      "At one source per element a random field is about 63% covered, which is unreadable. At one per thirty it is about 3% covered, which is a population you can count."
+     ],
+     "work": "37,929,011,953 things over roughly one million pixels is about <b>38,000 to a pixel</b>. That is 1,100 times past the confusion limit, so at full field the set cannot be drawn honestly at all, and the instrument must say so rather than show white.",
+     "wrong": "Count individual sources correctly in a field denser than the confusion limit.",
+     "keys": [
+      [
+       "source confusion",
+       "Condon, ApJ 188 279, 1974; standard radio survey practice",
+       "published"
+      ],
+      [
+       "one source per 20&ndash;50 beams",
+       "convention, not a single derived constant",
+       "candidate"
+      ],
+      [
+       "63% coverage at one per element",
+       "1 &minus; e<sup>&minus;1</sup>, for a Poisson field",
+       "derived"
+      ],
+      [
+       "37,929,011,953",
+       "tools/clusters.py over 67 repositories, 2026-09-19; cross checked by tools/belt_split.py",
+       "measured"
+      ]
+     ]
+    },
+    {
+     "id": "L13",
+     "title": "Whatever you are looking at, everything else still exists",
+     "say": "Zooming in must never quietly lose what you zoomed past. Everything is either being seen, or being held unseen, or outside the view, and the three must always add up to everything.",
+     "mean": "This is the law that makes looking at something enormous safe. It is the difference between concentrating and forgetting. If the three do not add up, the instrument says so rather than showing a confident picture of a fragment.",
+     "real": "The thing being counted moves while you count it. This estate was 67 repositories in the morning and 68 by lunchtime because creating a repository added one, and a measurement taken at 11:13 and repeated at 11:24 agreed only because nothing was committed in between. So the invariant is checked against the total the cartridge declares, and the cartridge carries the time it was measured. A total without a timestamp is not a total.",
+     "eq": "resolved + held + outside the field = the whole",
+     "symbols": [
+      "<b>resolved</b> what is actually drawn, thing by thing.",
+      "<b>held</b> what is present but too crowded to draw, counted where it stands.",
+      "<b>outside</b> what the view does not contain, still counted."
+     ],
+     "work": "Inside one repository of an estate of 37,929,011,953 lines: resolved 0, held 35.56 billion in 5,054 sources, outside 2.37 billion. Those add to 37.93 billion, and the instrument checks it on <b>every frame</b>.",
+     "wrong": "Find any frame where the three do not sum to the whole. It then prints MISACCOUNTED and the amount.",
+     "keys": [
+      [
+       "the invariant",
+       "enforced every frame in Ventusltd/cosmic, index.html",
+       "measured"
+      ],
+      [
+       "37,929,011,953 at 2026-09-19T11:24:27+01:00",
+       "tools/clusters.py, cross checked by tools/belt_split.py at 11:13:06, identical totals",
+       "measured"
+      ],
+      [
+       "the estate grew 67 to 68 during measurement",
+       "observed directly; tools/web.py counted 68 at 12:00",
+       "measured"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Federation",
+   "laws": [
+    {
+     "id": "L14",
+     "title": "Every drop is the ocean",
+     "say": "Anything small enough to hold in one hand must carry the structure of the whole, so that the whole can be trusted from any single piece of it.",
+     "mean": "Federation only works if one node can verify what it holds without asking a centre. Content addressing gives exactly that: a thing's name is the hash of its own content, so whoever holds it can check it, and because a parent's name is built from its children's names, a matching parent certifies everything beneath it without any of it being sent. The same law applied at every level is what makes a drop resemble the ocean.",
+     "real": "A drop that is not true poisons everything built on it, and the failure is silent because the arithmetic still adds up. So the practice is the one already written into the federation record: make one true drop before any ocean scale claim. Measure one repository completely before reporting an estate. Draw one line correctly before drawing 37.93 billion. Almost every error in this work has come from the opposite order, a confident total assembled from parts nobody checked, including a printed count of 83.2 billion square micrometres on a wafer that holds 70.7 billion.",
+     "eq": "name = H(content)&nbsp;&nbsp;&nbsp;&nbsp;H(parent) = H( H(child&#8321;) &#8214; H(child&#8322;) &#8214; &hellip; )",
+     "symbols": [
+      "<b>H</b> a hash function: it turns any amount of content into a short fixed length name, and the same content always produces the same name.",
+      "<b>&#8214;</b> means joined together, end to end.",
+      "Because a parent's name is built from its children's names, a matching parent name certifies every child underneath it <b>without looking at any of them</b>. That is the whole of it.",
+      "The name is allocated by no authority, is never reassigned, and is identical on every machine that holds the content."
+     ],
+     "work": "Comparing 65 repositories across two hosts certified <b>128,369 keys</b>, because a matching tree hash means byte identical contents and nothing further needs checking. And the estate's real adjacency is measured the same way: <b>2,235 blobs</b> whose name appears in more than one repository, which is byte identical content in both and cannot be argued with.",
+     "wrong": "Find two different contents with the same address, or a node that cannot verify what it holds without asking a centre. <b>The first has already partly happened</b>: SHA-1 collisions were demonstrated in 2017, so the address is not unconditionally unique and git now hardens against exactly that. The law survives only as long as the hash does, and it says so.",
+     "keys": [
+      [
+       "every drop is the ocean",
+       "written in the estate: data-federation-map-for-globalgrid2050-all-repos/every-drop-is-the-ocean/ and spiders/river-to-ocean/README.md line 55",
+       "measured"
+      ],
+      [
+       "one true drop before any ocean scale claim",
+       "GLOBALGRID2050_FEDERATION_CANONICAL_RECORD.md",
+       "measured"
+      ],
+      [
+       "hash trees",
+       "Merkle, 1979",
+       "published"
+      ],
+      [
+       "content addressed object model",
+       "git object model; a blob's name is the hash of its contents",
+       "standard"
+      ],
+      [
+       "SHA-1 collision",
+       "Stevens, Bursztein, Karpman, Albertini, Markov, 2017 (SHAttered)",
+       "published"
+      ],
+      [
+       "128,369 keys certified by 65 comparisons",
+       "tools/twin_register.mjs, Ventusltd/kuiper-belt",
+       "measured"
+      ],
+      [
+       "2,235 shared blobs",
+       "tools/web.py, Ventusltd/grid, 2026-09-19",
+       "measured"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Delivery",
+   "laws": [
+    {
+     "id": "L15",
+     "title": "A cable bent too tight is already damaged, and will not tell you for years",
+     "say": "Every cable has a radius below which bending it destroys it, and the destruction is invisible, passes the test, and shows up later.",
+     "mean": "Bending stretches the outside of the cable and compresses the inside. The conductor survives it. The insulation, the screen and the bedding do not: they thin, wrinkle or separate, and a screen lifted off the insulation leaves a gap where the field concentrates, which is L4 waiting to be paid. The cable then passes its commissioning test and fails in service, which is the worst possible order.",
+     "real": "This is one of the commonest ways cables are destroyed and almost none of it is in the design. It happens at the drum, at the pull, at the bend into a joint bay, in a cleat pulled up too hard, around a corner nobody surveyed. The site is wet, it is late, the plant is on hire, and the radius the drawing assumed is not available. The minimum is also not one number: during installation it is larger than in the final position, because the cable is being pulled at the same time.",
+     "eq": "R<sub>min</sub> = k &times; D",
+     "symbols": [
+      "<b>R<sub>min</sub></b> the tightest radius the cable may be bent to.",
+      "<b>D</b> the overall diameter of the cable.",
+      "<b>k</b> a multiplier set by the construction and the standard, larger for single core than multicore, and larger again while the cable is being pulled."
+     ],
+     "work": "A single core MV XLPE cable of 60 mm overall diameter at a multiplier of 15 gives R<sub>min</sub> = <b>900 mm</b>. Pulling it round 600 mm is not a 33% error, it is a destroyed cable that will test clean.",
+     "wrong": "Bend a cable well inside its minimum radius, energise it, and have it survive its design life. The test takes decades, which is exactly why the rule is obeyed rather than proved on site.",
+     "keys": [
+      [
+       "minimum bending radius, k around 12 to 15 times D",
+       "manufacturer instructions, and handling requirements in BS 7870 and IEC 60840. Multipliers quoted from memory",
+       "candidate"
+      ],
+      [
+       "field concentration at a lifted screen",
+       "follows from L4",
+       "derived"
+      ]
+     ]
+    },
+    {
+     "id": "L16",
+     "title": "Arc flash energy is set by how long the protection takes, not by how much PPE is worn",
+     "say": "The heat delivered by an electrical arc grows with the time it is allowed to burn, so the only real control is clearing it faster.",
+     "mean": "Incident energy rises with duration and falls with the square of distance. Protective clothing is the last line: it caps what a person survives, not what happens. Halving the clearing time halves the energy. Doubling the distance quarters it. Protection settings are therefore a safety design decision and not a relay engineer's private business.",
+     "real": "The arc does not read the drawing. It starts because a panel was mislabelled, a cover was off, a tool slipped, something got in, or somebody worked live because the job was behind. Maintenance settings that speed up clearing get left switched off after the work. Upstream discrimination fights downstream speed, and the compromise is usually settled in favour of continuity of supply rather than in favour of the person standing in front of the panel.",
+     "eq": "E grows with t, and falls with d&sup2;&nbsp;&nbsp;&nbsp;&nbsp;burn threshold: 1.2 cal/cm&sup2;",
+     "symbols": [
+      "<b>E</b> incident energy: the heat arriving at a surface, in calories per square centimetre.",
+      "<b>t</b> the time the arc burns, which is the protection's clearing time.",
+      "<b>d</b> the working distance from the arc.",
+      "<b>1.2 cal/cm&sup2;</b> the onset of a second degree burn on bare skin."
+     ],
+     "work": "Halving a clearing time from 500 ms to 250 ms halves the incident energy. Moving the working distance from 450 mm to 900 mm quarters it. Buying a higher category of clothing changes neither, it only changes what is survived.",
+     "wrong": "Measure incident energy that does not fall when the clearing time is reduced.",
+     "keys": [
+      [
+       "arc flash incident energy model",
+       "IEEE 1584-2018",
+       "standard"
+      ],
+      [
+       "1.2 cal/cm2 second degree burn onset",
+       "IEEE 1584 and NFPA 70E convention",
+       "standard"
+      ],
+      [
+       "E proportional to t and to one over d squared",
+       "a simplification. The IEEE 1584 model is empirical and is not this simple",
+       "candidate"
+      ]
+     ]
+    },
+    {
+     "id": "L17",
+     "title": "The protection must let through less energy than the cable can take",
+     "say": "During a fault the breaker or fuse decides how much energy reaches the cable, and that energy must be less than the cable can absorb without cooking.",
+     "mean": "A fault lasts milliseconds, too fast for any heat to escape, so all of it stays in the conductor. What the conductor can absorb depends on its cross section and on what the insulation can survive. This is why a cable is not sized only for its running current, and why a device is not chosen only for its breaking capacity.",
+     "real": "The calculation assumes a clean bolted fault and a device that behaves exactly as its curve says. Real faults arc and are current limited, devices age, settings get changed by whoever was last on site, and the discrimination study is done once and never revisited after three extensions. The paperwork is not bureaucracy here. It is the only surviving record of what the system was designed to withstand.",
+     "eq": "I&sup2;t &le; k&sup2; &times; S&sup2;",
+     "symbols": [
+      "<b>I&sup2;t</b> the let through energy: the fault current squared, multiplied by how long it flows. The device's data gives you this number.",
+      "<b>S</b> the conductor cross sectional area, in square millimetres.",
+      "<b>k</b> a constant for that conductor and insulation combination, which carries the permitted temperature rise.",
+      "It is called the adiabatic equation because it assumes no heat escapes during the fault, which over milliseconds is true."
+     ],
+     "work": "With k = 143 for copper with XLPE, a 95 mm&sup2; conductor can absorb (143 &times; 95)&sup2; = <b>1.85 &times; 10<sup>8</sup> A&sup2;s</b>. A device letting through more than that has damaged the cable even though it cleared the fault.",
+     "wrong": "Let through more than k squared times S squared into a conductor and find the insulation undamaged.",
+     "keys": [
+      [
+       "adiabatic equation",
+       "IEC 60364-4-43 and BS 7671",
+       "standard"
+      ],
+      [
+       "k = 143 copper with XLPE, 94 aluminium with XLPE",
+       "IEC 60364-5-54 tables, quoted from memory",
+       "candidate"
+      ]
+     ]
+    },
+    {
+     "id": "L18",
+     "title": "The physics is almost never what stops the job",
+     "say": "The physics sets the ceiling. Everything else decides whether you ever reach it, and the binding constraint is almost always something else.",
+     "mean": "A law book that states only physics is describing a laboratory nobody works in. In delivery the limit is usually elsewhere: a drum delivered late, a gland fitted wrong, a radius pulled too tight, a panel mislabelled, a design copied, a customer who does not pay, a recession, a crisis, a person. Maxwell has never once been the reason a cable was not installed correctly.",
+     "real": "The full list of non-ideal conditions is not soil resistivity and ambient temperature. It is politics, economics, bureaucracy, criminals, cashflow, family life, factory visits, envy, copycats, unethical buyers, sales pressure, a hundred thousand miles of driving, bad debts, the crises of 2008 and 2020, work delivered and never paid for, a bonus taken, and violence on the way home from a networking event. None of it appears in any equation on this page and all of it decides the outcome. Bureaucracy in particular is not friction: standards are a written record of how people were killed, and the paperwork exists because the physics is unforgiving. Twenty-two years of solving cable problems means twenty-two years of solving them inside all of that, which is the harder problem and the one that carries.",
+     "eq": "delivered = min( physical ceiling , everything else )",
+     "symbols": [
+      "<b>min</b> means whichever of the two is smaller. Not the average and not the sum: the smaller one wins completely.",
+      "<b>the binding constraint</b> is whichever term is doing the limiting. Improving any other term changes the outcome by nothing at all.",
+      "That last sentence is the useful one. Optimising the physics of a system whose constraint is commercial or human produces no improvement whatsoever, and it is a common and expensive mistake."
+     ],
+     "work": "Halving the losses in a cable that was never paid for delivers nothing. Taking a cell from 22% to 23% on a project that cannot be financed delivers nothing. So the first question on any job is which term is binding, and unlike most first questions it is answerable.",
+     "wrong": "Produce a completed project in which the physics was the binding constraint and none of the commercial, installation or human conditions were. Test it against a real portfolio rather than against an argument.",
+     "keys": [
+      [
+       "the binding constraint governs",
+       "theory of constraints, standard in operations research",
+       "published"
+      ],
+      [
+       "the list of conditions",
+       "twenty two years of practice in cables and solar, stated by the practitioner. Not independently verifiable here and marked accordingly",
+       "candidate"
+      ],
+      [
+       "standards as a record of harm",
+       "asserted here, not cited to a history",
+       "candidate"
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
