@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="data:,">
+<title>Law</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { color-scheme: dark; }
+  html { background:#000; }
+  body { background:#000; color:#fff; font-family:Courier,monospace; padding:40px; max-width:980px; margin:0 auto; font-size:20px; line-height:1.6; }
+  h1 { margin:0 0 6px; }
+  a { color:#66ccff; text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  header p { color:#aaa; font-size:16px; margin:0 0 10px; }
+  .rule { color:#aaa; font-size:15px; border-top:1px solid #333; border-bottom:1px solid #333; padding:14px 0; margin:22px 0 26px; }
+  .rule b { color:#00ffff; font-weight:bold; }
+  details.area { border-bottom:1px solid #333; }
+  details.area > summary { list-style:none; cursor:pointer; padding:14px 0; color:#00ffff; font-weight:bold; letter-spacing:.5px; font-size:24px; }
+  details.area > summary::-webkit-details-marker { display:none; }
+  details.area > summary::before { content:"[+] "; }
+  details.area[open] > summary::before { content:"[−] "; }
+  details.area > summary:hover { color:#66ffff; }
+  details.nest { margin:0 0 14px 18px; border-bottom:0; }
+  details.nest > summary { list-style:none; cursor:pointer; font-size:18px; padding:8px 0; color:#66ccff; font-weight:bold; }
+  details.nest > summary::-webkit-details-marker { display:none; }
+  details.nest > summary::before { content:"[+] "; color:#00ffff; }
+  details.nest[open] > summary::before { content:"[−] "; color:#00ffff; }
+  details.nest > summary:hover { color:#9fdcff; }
+  .body { margin:0 0 22px 22px; border-left:1px solid #1c1c1c; padding-left:18px; }
+  .say { color:#fff; font-size:19px; line-height:1.45; margin:6px 0 4px; }
+  .lab { display:block; color:#00ffff; font-size:12px; letter-spacing:.09em; text-transform:uppercase; margin:16px 0 5px; }
+  p.t { color:#cfcfcf; font-size:15px; margin:4px 0; }
+  .eq { background:#0b0b0b; border-left:2px solid #00ffff; padding:11px 13px; margin:7px 0; color:#e8e6e1; font-size:16px; overflow-x:auto; white-space:nowrap; }
+  ul.sym { margin:6px 0 0; padding-left:20px; color:#9aa3af; font-size:14px; }
+  ul.sym li { margin:3px 0; }
+  ul.sym b { color:#e8e6e1; font-weight:bold; }
+  .work { color:#53ff4c; font-size:15px; margin:4px 0; }
+  .wrong { color:#ffbe45; font-size:15px; margin:4px 0; }
+  .note { color:#7a7a7a; font-size:14px; margin:8px 0 0; }
+  .footer { margin-top:50px; font-size:14px; color:#aaa; line-height:1.5; border-top:1px solid #333; padding-top:18px; }
+  .footer a { color:#5a5a5a; }
+  @media(max-width:600px){ body{padding:22px;font-size:18px} details.area>summary{font-size:22px} .say{font-size:18px} .eq{font-size:14px} }
+</style>
+</head>
+<body>
+<header>
+  <h1>Law</h1>
+  <p>What the universe is, through cables and mathematics and physics: gravity, electrons, photons, electromagnetic forces. The laws any system here must be modelled against.</p>
+</header>
+
+<div class="rule">
+  <b>How every law is written.</b> Five parts, in this order, always.
+  <b>The law</b> in one sentence with no symbols.
+  <b>What it means</b> in plain words.
+  <b>The maths</b>, with every symbol named.
+  <b>A worked number</b> from a cable, a cell or a network.
+  <b>How to show it is wrong</b>, because a law that cannot be falsified is not a law, it is an opinion.
+  Notation is the last step and never the price of entry.
+</div>
+
+<main>
+
+<details class="area"><summary>Light</summary>
+
+  <details class="nest"><summary>L1 &middot; One photon frees one electron, or none</summary>
+  <div class="body">
+    <p class="say">Light arrives in lumps. A single lump either carries enough energy to free one electron, or it does not, and no amount of dim light ever adds up to enough.</p>
+    <span class="lab">What it means</span>
+    <p class="t">Brightness changes <i>how many</i> electrons you get. Colour changes <i>whether you get any at all</i>. This is why a solar cell does nothing under infrared however bright you make it, and it is the founding law of the solar cell. Einstein published it in 1905 and it is what he was given the Nobel Prize for, not relativity.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">E = h &times; f&nbsp;&nbsp;&nbsp;and, in the units used for cells,&nbsp;&nbsp;&nbsp;E (eV) = 1239.84 &divide; &lambda; (nm)</div>
+    <ul class="sym">
+      <li><b>E</b> the energy carried by one photon.</li>
+      <li><b>h</b> Planck's constant, 6.626 &times; 10<sup>&minus;34</sup> joule seconds. A fixed number of nature, not a choice.</li>
+      <li><b>f</b> the frequency of the light, in cycles per second.</li>
+      <li><b>&lambda;</b> the wavelength, in nanometres. A nanometre is a millionth of a millimetre.</li>
+      <li><b>eV</b> an electron volt: the energy one electron gains falling through one volt. A convenient size of unit for one electron, the way a kilometre is convenient for a road.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">Silicon needs 1.12 eV to free an electron. 1239.84 &divide; 1.12 = <b>1107 nm</b>. Light of longer wavelength than that passes through a silicon cell as if it were a window. Half the energy in sunlight arrives beyond 700 nm, and everything past 1107 nm is simply unavailable.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Produce current from a silicon cell using light longer than about 1107 nm, at any intensity.</p>
+  </div>
+  </details>
+
+  <details class="nest"><summary>L2 &middot; There is a fixed number of usable photons, so there is a maximum current</summary>
+  <div class="body">
+    <p class="say">Sunlight delivers a countable number of usable photons per second, so there is a current a silicon cell can never exceed, no matter what else is improved.</p>
+    <span class="lab">What it means</span>
+    <p class="t">This is a ceiling set by the sun and by silicon, not by manufacturing. It tells you how much room is left to win, which is a different and more useful question than how good a cell is.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">J = q &times; &Phi;</div>
+    <ul class="sym">
+      <li><b>J</b> current per unit of area, in amperes per square metre.</li>
+      <li><b>q</b> the charge on one electron, 1.602 &times; 10<sup>&minus;19</sup> coulombs. Also fixed.</li>
+      <li><b>&Phi;</b> the number of photons landing per square metre per second that are energetic enough to be used.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">The standard test spectrum AM1.5G delivers 1000 W/m&sup2;, of which about 2.8 &times; 10<sup>21</sup> photons per square metre per second are above silicon's threshold. So 1.602 &times; 10<sup>&minus;19</sup> &times; 2.8 &times; 10<sup>21</sup> = <b>448 A/m&sup2;, which is 44.8 mA/cm&sup2;</b>. Real cells reach 40 to 42. The whole remaining prize is the gap between 42 and 44.8.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Measure a single junction silicon cell above 44.8 mA/cm&sup2; under one sun.</p>
+  </div>
+  </details>
+
+  <details class="nest"><summary>L3 &middot; Excess photon energy becomes heat, and that sets the ceiling</summary>
+  <div class="body">
+    <p class="say">A photon carrying more energy than the cell needs gives the surplus away as heat, and in a single layer of silicon nothing can be done about it.</p>
+    <span class="lab">What it means</span>
+    <p class="t">Blue light carries around 3 eV. Silicon takes 1.12 and wastes the rest as warmth. This is the largest single loss in a solar cell and it is not a defect, it is the physics of one material having one threshold. Stacking materials with different thresholds is the only way past it, which is what a tandem cell is.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">loss per photon = E<sub>photon</sub> &minus; E<sub>gap</sub></div>
+    <ul class="sym">
+      <li><b>E<sub>photon</sub></b> what the photon brought.</li>
+      <li><b>E<sub>gap</sub></b> what the material needs. For silicon, 1.12 eV.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">Add that loss across the whole spectrum and you get the single junction ceiling of <b>33.7%</b> (Shockley and Queisser, 1961). Silicon's own ceiling is about <b>29.4%</b> once Auger recombination is counted (Richter, Hermle and Glunz, 2013). Records sit near 27%. So a cell claiming 32% is either a tandem, under concentration, or wrong.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">A single junction silicon cell above 29.4% under one sun at standard conditions.</p>
+  </div>
+  </details>
+
+</details>
+
+<details class="area"><summary>Cables</summary>
+
+  <details class="nest"><summary>L4 &middot; The stress is highest at the conductor surface, so the conductor's shape decides the life</summary>
+  <div class="body">
+    <p class="say">In a round cable the electrical stress is greatest right at the surface of the conductor and falls away with distance, so any flat, whisker or dent on that surface is where the cable will eventually fail.</p>
+    <span class="lab">What it means</span>
+    <p class="t">This is the reason for circular compacted conductors, and the reason the conductor screen exists at all: to smooth a field that the geometry could not. It is also why symmetry is rewarded everywhere in this work. Things fail at the peak, not the average, and symmetry lowers the peak for a given average.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">E(r) = U<sub>0</sub> &divide; ( r &times; ln(R<sub>o</sub> &divide; R<sub>i</sub>) )</div>
+    <ul class="sym">
+      <li><b>E(r)</b> the stress at distance r from the centre, in volts per metre.</li>
+      <li><b>U<sub>0</sub></b> the voltage between conductor and earth.</li>
+      <li><b>R<sub>i</sub></b> the radius of the conductor. <b>R<sub>o</sub></b> the radius over the insulation.</li>
+      <li><b>ln</b> the natural logarithm: how many times you must multiply the number 2.718 by itself to reach the number in the bracket. It appears because the field spreads over a growing circumference.</li>
+      <li>Because r is on the bottom, E is largest when r is smallest, which is at the conductor surface.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">A 33 kV cable, so U<sub>0</sub> = 19 kV. Conductor radius 16.85 mm, insulation 8 mm thick, so R<sub>o</sub> = 24.85 mm. E<sub>max</sub> = 19000 &divide; (0.01685 &times; ln(1.475)) = 19000 &divide; (0.01685 &times; 0.3886) = <b>2.9 MV/m, which is 2.9 kV/mm</b>. XLPE medium voltage designs sit around 3 to 5 kV/mm, so that is a sane cable.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Find the stress peak anywhere other than the conductor surface in a concentric round cable with uniform insulation.</p>
+    <p class="note">Check the dimensions against your own datasheets. A number without a source is a candidate, not a fact.</p>
+  </div>
+  </details>
+
+  <details class="nest"><summary>L5 &middot; Alternating current does not use the middle of a thick conductor</summary>
+  <div class="body">
+    <p class="say">At mains frequency the current crowds into the outside of a conductor, so beyond a certain thickness the metal in the middle is paid for and not used.</p>
+    <span class="lab">What it means</span>
+    <p class="t">It is why very large conductors are built as separately insulated segments, Milliken construction, rather than as one solid mass. And it is why none of this applies on your 1500 V DC side: direct current has no frequency, so it uses the whole cross section, and DC sizing is thermal limit and volt drop only.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">&delta; = &radic;( 2&rho; &divide; (&omega;&mu;) )&nbsp;&nbsp;&nbsp;where&nbsp;&nbsp;&omega; = 2&pi;f</div>
+    <ul class="sym">
+      <li><b>&delta;</b> the skin depth: the depth at which the current has fallen to about 37% of its value at the surface.</li>
+      <li><b>&rho;</b> resistivity, how strongly the metal resists. <b>&mu;</b> permeability, how the metal carries magnetism.</li>
+      <li><b>&omega;</b> angular frequency, which is just the frequency <b>f</b> in hertz multiplied by 2&pi;, because the maths of anything rotating counts in radians.</li>
+      <li><b>&radic;</b> square root: the number which, multiplied by itself, gives what is inside.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">At 50 Hz: copper <b>9.3 mm</b>, aluminium <b>12.0 mm</b>. A 400 mm&sup2; round conductor is about 22.6 mm across, so its radius is already past copper's skin depth. That is the point where AC resistance starts to exceed DC resistance meaningfully, and where segmental construction starts to pay.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Measure a solid 1000 mm&sup2; conductor at 50 Hz and find its AC resistance equal to its DC resistance.</p>
+  </div>
+  </details>
+
+  <details class="nest"><summary>L6 &middot; The tightest packing of circles is a honeycomb, and stranded cable has always known it</summary>
+  <div class="body">
+    <p class="say">Circles pack most tightly in a honeycomb arrangement, and no arrangement can ever beat it. Stranded conductors are built that way, and trefoil is the same pattern with three circles.</p>
+    <span class="lab">What it means</span>
+    <p class="t">This is a proved theorem, not a convention. Ropemakers and cablemakers arrived at it by hand centuries before it was proved, which is why the standard strandings are the numbers they are.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">density = &pi; &divide; &radic;12 &asymp; 0.9069&nbsp;&nbsp;&nbsp;ring counts: 3n&sup2; + 3n + 1 = 1, 7, 19, 37, 61, 91</div>
+    <ul class="sym">
+      <li><b>density</b> the fraction of the area actually filled by metal. 0.9069 means just over 90%, and the remaining 10% is unavoidable gap.</li>
+      <li><b>3n&sup2; + 3n + 1</b> the centred hexagonal numbers. Put n = 0, 1, 2, 3 and you get 1, 7, 19, 37: one wire, then a ring of 6 around it, then a ring of 12, then a ring of 18.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">IEC 60228 Class 2 strandings are <b>7, 19, 37, 61, 91</b>. Those are exactly the centred hexagonal numbers. Compaction then deforms the round wires to push fill factor from about 0.75 up past 0.90, buying what circle packing says round wires cannot reach, and smoothing the field concentrators at the same time, which is law L4 paying out again.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Pack circles in a plane more densely than 0.9069. Proved impossible by Thue, rigorously by Fejes T&oacute;th.</p>
+    <p class="note">Trefoil is the unit cell of this packing: three touching circles, the densest and most symmetric arrangement three conductors can take. Its electrical reward is separate, that the three phases then have equal mutual coupling, so the circuit is balanced and the sheath circulating currents are lowest.</p>
+  </div>
+  </details>
+
+</details>
+
+<details class="area"><summary>Current and heat</summary>
+
+  <details class="nest"><summary>L7 &middot; Heat rises with the square of the current</summary>
+  <div class="body">
+    <p class="say">Current passing through resistance makes heat, and doubling the current does not double the heat, it quadruples it.</p>
+    <span class="lab">What it means</span>
+    <p class="t">This is the reason a cable has a rating at all. The limit is not the metal failing, it is the insulation cooking. The square is why a 10% overload is tolerable and a 40% one is not.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">P = I&sup2; &times; R</div>
+    <ul class="sym">
+      <li><b>P</b> power lost as heat, in watts.</li>
+      <li><b>I</b> current in amperes. <b>I&sup2;</b> means I multiplied by itself.</li>
+      <li><b>R</b> resistance in ohms. Resistance rises with temperature, so a hot cable is a worse cable, which feeds back into its own heating.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">400 mm&sup2; aluminium, 0.0778 &Omega;/km at 20&deg;C, about 0.0997 &Omega;/km at 90&deg;C. At 500 A: 500 &times; 500 &times; 0.0997 = <b>24.9 kW of heat per kilometre per phase</b>. At 700 A it is 48.8 kW, not 34.9 kW.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Measure heating that rises in proportion to current rather than to its square, in a fixed resistance.</p>
+    <p class="note">The resistance figure is quoted from IEC 60228 from memory. Check it against your copy before anyone builds anything on it.</p>
+  </div>
+  </details>
+
+  <details class="nest"><summary>L8 &middot; Every metre of cable takes voltage away</summary>
+  <div class="body">
+    <p class="say">Voltage arriving at the far end is always less than voltage sent, and the loss grows with current and with length.</p>
+    <span class="lab">What it means</span>
+    <p class="t">On a PV string this is why cable is often sized for volt drop rather than for current. The conductor is thermally fine and electrically too lossy.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">DC: &Delta;V = 2 &times; I &times; R &times; L&nbsp;&nbsp;&nbsp;&nbsp;three phase AC: &Delta;V = &radic;3 &times; I &times; L &times; (R cos&phi; + X sin&phi;)</div>
+    <ul class="sym">
+      <li><b>&Delta;V</b> the voltage lost. The symbol &Delta; simply means "the change in".</li>
+      <li><b>2 &times;</b> on DC because the current goes out on one conductor and back on the other, so you pay twice.</li>
+      <li><b>R</b> resistance per unit length, <b>X</b> reactance per unit length, which is the opposition caused by the magnetic field rather than by the metal.</li>
+      <li><b>cos&phi;</b> the power factor: how much of the current is doing useful work. At unity it is 1.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">A 6 mm&sup2; copper PV string, about 3.08 &Omega;/km, carrying 15 A over 50 m: &Delta;V = 2 &times; 15 &times; 3.08 &times; 0.05 = <b>4.6 V</b>. On a 1500 V system that is 0.31%, comfortably inside a 1% string target.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Measure the voltage at both ends and find no difference under load.</p>
+  </div>
+  </details>
+
+</details>
+
+<details class="area"><summary>Networks</summary>
+
+  <details class="nest"><summary>L9 &middot; What flows into a junction flows out of it</summary>
+  <div class="body">
+    <p class="say">Current does not pile up anywhere. Everything arriving at a junction leaves it, and voltages around any closed loop cancel exactly.</p>
+    <span class="lab">What it means</span>
+    <p class="t">This is what makes a network solvable at all, and it is the check behind every load flow. A network that does not balance has a measurement error or a missing connection. It never has a physics exception.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">at any junction: &Sigma; I = 0&nbsp;&nbsp;&nbsp;&nbsp;around any loop: &Sigma; V = 0</div>
+    <ul class="sym">
+      <li><b>&Sigma;</b> means "add up all of them". It is shorthand for a list, nothing more.</li>
+      <li>Currents in count as positive, currents out as negative, so adding them gives zero.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">A substation busbar taking 300 A and 450 A on two incomers and feeding three circuits must send out exactly 750 A. If the meters say 742 A, you have 8 A of measurement error or 8 A going somewhere nobody has drawn.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Find a junction where in and out differ by more than the instruments' error, with every connection accounted for.</p>
+  </div>
+  </details>
+
+  <details class="nest"><summary>L10 &middot; Three phases carry the same power with less metal</summary>
+  <div class="body">
+    <p class="say">Three conductors carrying alternating current a third of a cycle apart deliver steady power, and need less copper than doing the same job any other way.</p>
+    <span class="lab">What it means</span>
+    <p class="t">The three currents sum to zero at every instant when the load is balanced, so in principle nothing has to return. That cancellation is also why trefoil works: the fields outside three balanced conductors very nearly cancel.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">P = &radic;3 &times; V<sub>L</sub> &times; I &times; cos&phi;</div>
+    <ul class="sym">
+      <li><b>V<sub>L</sub></b> the voltage between any two lines, which is the number a system is named by: 33 kV, 132 kV.</li>
+      <li><b>&radic;3</b>, about 1.732, appears because the three phases are 120 degrees apart, not because anyone chose it.</li>
+      <li><b>cos&phi;</b> power factor again.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">33 kV, 500 A, power factor 0.95: 1.732 &times; 33000 &times; 500 &times; 0.95 = <b>27.2 MW</b>.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Meter the three phases and the delivered power and find the &radic;3 absent.</p>
+  </div>
+  </details>
+
+</details>
+
+<details class="area"><summary>Looking</summary>
+
+  <details class="nest"><summary>L11 &middot; Everything you see is the past</summary>
+  <div class="body">
+    <p class="say">Nothing is observed as it is now. Everything is observed as it was when the signal left, and the further away it is, the older the news.</p>
+    <span class="lab">What it means</span>
+    <p class="t">In the sky this is why distance is time. On a network it is why protection has to be designed around the fact that the far end does not yet know.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">t = d &divide; c</div>
+    <ul class="sym">
+      <li><b>t</b> the delay. <b>d</b> the distance. <b>c</b> the speed of light, 299,792,458 metres per second exactly, because since 1983 the metre is defined by it.</li>
+      <li>In a cable, signals travel slower than in vacuum, typically around half c in XLPE.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">Sunlight is <b>8 minutes 20 seconds</b> old when it reaches a panel. A signal along 100 km of cable at about half the speed of light arrives roughly <b>0.6 milliseconds</b> later, which is around 30 electrical degrees at 50 Hz and is not negligible to a protection engineer.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Carry information faster than c.</p>
+  </div>
+  </details>
+
+  <details class="nest"><summary>L12 &middot; Past a certain crowding, things cannot be told apart</summary>
+  <div class="body">
+    <p class="say">However good the instrument, once sources are packed closer than it can separate them, you stop counting objects and start looking at a blur.</p>
+    <span class="lab">What it means</span>
+    <p class="t">Astronomy calls this source confusion and stops surveys there rather than pretending. It is the same reason a drawing of 37.9 billion things on a million pixels is white and says nothing. The honest response is to say a thing is unresolved and state how many it holds, not to thin it out until it looks manageable.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">confusion begins at roughly one source per 20 to 50 resolution elements</div>
+    <ul class="sym">
+      <li>A <b>resolution element</b> is the smallest patch the instrument can separate. On a screen it is a pixel.</li>
+      <li>At one source per element a random field is about 63% covered, which is unreadable. At one per thirty it is about 3% covered, which is a population you can count.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">37.9 billion things over roughly a million pixels is about <b>40,000 to a pixel</b>, so nothing can be drawn honestly at that zoom. Travel until an object holds fewer than one per thirty pixels and it resolves. That is a telescope, not a compromise.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Count individual sources correctly in a field denser than the confusion limit.</p>
+  </div>
+  </details>
+
+  <details class="nest"><summary>L13 &middot; Whatever you are looking at, everything else still exists</summary>
+  <div class="body">
+    <p class="say">Zooming in must never quietly lose what you zoomed past. Everything is either being seen, or being held unseen, or outside the view, and the three must always add up to everything.</p>
+    <span class="lab">What it means</span>
+    <p class="t">This is the law that makes looking at something enormous safe. It is the difference between concentrating and forgetting. If the three do not add up, the instrument says so rather than showing a confident picture of a fragment.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">resolved + held + outside the field = the whole</div>
+    <ul class="sym">
+      <li><b>resolved</b> what is actually drawn, thing by thing.</li>
+      <li><b>held</b> what is present but too crowded to draw, counted where it stands.</li>
+      <li><b>outside</b> what the view does not contain, still counted.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">Inside one repository of an estate of 37,929,011,953 lines: resolved 0, held 35.56 billion in 5,054 sources, outside 2.37 billion. Those add to 37.93 billion, and the instrument checks it on <b>every frame</b>.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Find any frame where the three do not sum to the whole. It then prints MISACCOUNTED and the amount.</p>
+  </div>
+  </details>
+
+</details>
+
+</main>
+
+<div class="footer">
+  <b>Disclaimer:</b> Content provided for general technical documentation and research purposes only.
+  Laws are stated so that they can be shown to be wrong. Where a number is quoted from a standard or
+  from memory it says so, and should be checked against the standard before anyone builds anything on it.
+  No warranty is given.
+  <br><br>
+  Code under Apache-2.0. Documentation under CC BY 4.0.
+</div>
+</body>
+</html>
