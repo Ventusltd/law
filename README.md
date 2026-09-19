@@ -65,3 +65,11 @@ other.
 Code under Apache-2.0. Documentation under CC BY 4.0. No warranty is given.
 Where a number is quoted from a standard or from memory it says so, and should be checked against
 the standard before anyone builds anything on it.
+
+<!-- DRIFT:START -->
+### Host entanglement, 2026-09-19T11:50:02.031Z
+
+**NOT EVALUATED.** no observation from gitlab
+
+Run `20260919T115002Z`, digest `a28b787e1ec5946c74ee150829fffea2811a28c752a71894defcc7b8388c6229`. LAWS.md L10.
+<!-- DRIFT:END -->

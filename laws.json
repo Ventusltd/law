@@ -445,17 +445,18 @@
     },
     {
      "id": "L12",
-     "title": "Past a certain crowding, things cannot be told apart",
-     "say": "However good the instrument, once sources are packed closer than it can separate them, you stop counting objects and start looking at a blur.",
+     "title": "Past a certain crowding, things cannot be told apart in one frame",
+     "say": "However good the instrument, once sources are packed closer than it can separate them, you stop counting objects and start looking at a blur. But this binds one frame, not a display, and that difference is everything.",
      "mean": "Astronomy calls this source confusion and stops surveys there rather than pretending. It is the same reason a drawing of 37.9 billion things on a million pixels is white and says nothing. The honest response is to say a thing is unresolved and state how many it holds, not to thin it out until it looks manageable.",
-     "real": "The instrument is worse than the theory says. A screen has non square pixels, scaling, compression and a viewer who is not a photon counter, so the practical limit arrives earlier than the arithmetic. This is why the criterion used here is one per thirty pixels rather than one per pixel: at one per pixel a random field is 63% covered and unreadable, which was tried and looked exactly like the white flash it was meant to cure.",
-     "eq": "confusion begins at roughly one source per 20 to 50 resolution elements",
+     "real": "This law was written as an absolute limit and was wrong within hours. The confusion limit applies to one exposure. A display's capacity is not its resolution elements, it is its resolution elements multiplied by its frames, so showing everything was never impossible, only slow. Measured on a 1120 by 1064 window: 40,248 things per frame at 5.5 pixel spacing, 5.11 million per second, and the whole estate of 37,929,011,953 shown in 2.1 hours with nothing sharing a pixel with anything. On a 3840 by 2160 panel the same run is 18 to 38 minutes depending on refresh rate. The instrument is still worse than the arithmetic, because a screen has non square pixels, scaling and compression, and a viewer who is not a photon counter. Which raises the separate and harder limit: being shown is not being seen. A person cannot apprehend five million things a second, so completeness of display and completeness of understanding are two different claims and must never be conflated. Clustering is for the second one.",
+     "eq": "one frame: one thing per 20 to 50 resolution elements&nbsp;&nbsp;&nbsp;&nbsp;a display: capacity = elements &times; frames",
      "symbols": [
       "A <b>resolution element</b> is the smallest patch the instrument can separate. On a screen it is a pixel.",
-      "At one source per element a random field is about 63% covered, which is unreadable. At one per thirty it is about 3% covered, which is a population you can count."
+      "At one thing per element a random field is about 63% covered, which is unreadable. At one per thirty it is about 3% covered, which is a population you can count.",
+      "<b>&times; frames</b> is the part that was missed. A frame is a fresh set of elements, so time multiplies capacity, and completeness becomes a question of how long rather than whether."
      ],
-     "work": "37,929,011,953 things over roughly one million pixels is about <b>38,000 to a pixel</b>. That is 1,100 times past the confusion limit, so at full field the set cannot be drawn honestly at all, and the instrument must say so rather than show white.",
-     "wrong": "Count individual sources correctly in a field denser than the confusion limit.",
+     "work": "37,929,011,953 things over roughly one million pixels is about <b>38,000 to a pixel</b>, which is 1,100 times past the limit, so at full field in one frame nothing honest can be drawn. Across frames it can: at a measured <b>5.11 million per second</b> on this window, every one of them is shown, each in its own resolution element, in <b>2.1 hours</b>. Press s in the engine and it either reaches the total or it does not.",
+     "wrong": "Count individual sources correctly in a single frame denser than the confusion limit. Or show that a display's capacity is not its resolution elements multiplied by its frames.",
      "keys": [
       [
        "source confusion",
@@ -475,6 +476,21 @@
       [
        "37,929,011,953",
        "tools/clusters.py over 67 repositories, 2026-09-19; cross checked by tools/belt_split.py",
+       "measured"
+      ],
+      [
+       "capacity = elements &times; frames",
+       "arithmetic, once the frame is admitted as the unit",
+       "derived"
+      ],
+      [
+       "40,248 per frame, 5.11 million per second, 2.1 hours",
+       "measured in Ventusltd/cosmic scan mode on a 1120 x 1064 window, 2026-09-19",
+       "measured"
+      ],
+      [
+       "this law was broken the day it was written",
+       "see L19",
        "measured"
       ]
      ]
@@ -508,6 +524,81 @@
        "the estate grew 67 to 68 during measurement",
        "observed directly; tools/web.py counted 68 at 12:00",
        "measured"
+      ]
+     ]
+    },
+    {
+     "id": "L19",
+     "title": "A law is what is currently known, and is held only until it breaks",
+     "say": "Nothing here is eternal. Every law on this page is the best account anyone currently has, kept because nothing has broken it yet, and it is expected to be broken.",
+     "mean": "This is why every law carries a way of being shown wrong. A statement that cannot be broken by any observation is not a law, it is an opinion wearing a law's clothes. The asymmetry matters: no number of confirmations ever proves a law, and a single counterexample ends it. So the honest posture is not confidence, it is naming in advance what would end it.",
+     "real": "L12 was written here as an absolute limit, that 37.9 billion things could not all be shown. It was broken the same day by noticing that the limit binds one frame and that a display has frames. The book was wrong for about four hours, the error was found by someone refusing to accept the refusal, and the law was amended rather than defended. That is the process working, not failing, and it is worth more than the law that was replaced. Faraday, with no mathematics, overturned what was known by experiment; Turing was destroyed by a law of his own day that has since been repealed. Laws of nature and laws of men are both provisional; only the timescales differ. Ramanujan is the sharpest case. Self taught from a second hand book of results, he failed his college examinations and lost his scholarship because he neglected everything that was not mathematics, worked as a clerk at the Madras Port Trust, wrote to Hardy in 1913, was a Fellow of the Royal Society by 1918 and dead at 32. Around 3,900 results, almost all correct, most of them without the proofs the discipline demanded, which is why some were not accepted for decades. And the Hardy and Ramanujan formula for the partition function is the direct ancestor of what this engine does: it counts an astronomically large set by formula, without enumerating a single member of it.",
+     "eq": "confirmations &rarr; never proof&nbsp;&nbsp;&nbsp;&nbsp;one counterexample &rarr; disproof",
+     "symbols": [
+      "<b>&rarr;</b> means leads to.",
+      "The two sides are not symmetric, and that asymmetry is the whole of scientific method. A thousand cables that behaved as predicted prove nothing about the next one. One that did not, disproves the rule for all of them.",
+      "Which is why the useful question about any law is never how confident you are, but what would have to happen for it to be wrong."
+     ],
+     "work": "Of the 70 keys on this page, <b>21 are marked candidate</b>, meaning quoted from memory and not yet verified. Those are the most likely places this book is currently wrong, and they are labelled in amber rather than hidden.",
+     "wrong": "Find a law in this book that is claimed to be beyond falsification. That claim would itself falsify this one.",
+     "keys": [
+      [
+       "falsifiability and the asymmetry",
+       "Popper, Logik der Forschung 1934; The Logic of Scientific Discovery 1959",
+       "published"
+      ],
+      [
+       "L12 amended within hours of being written",
+       "this repository's own history",
+       "measured"
+      ],
+      [
+       "21 of 70 keys are candidates",
+       "counted by tools/build.py at build time",
+       "measured"
+      ],
+      [
+       "Ramanujan: results without the training",
+       "self taught from Carr's Synopsis; clerk at the Madras Port Trust; letter to Hardy 1913; FRS 1918; died 1920 aged 32",
+       "published"
+      ],
+      [
+       "counting without enumerating",
+       "Hardy and Ramanujan asymptotic formula for the partition function, 1918, the first result of the circle method",
+       "published"
+      ]
+     ]
+    },
+    {
+     "id": "L20",
+     "title": "A resolution element can carry more than one bit, and usually should",
+     "say": "How much a display can show depends not only on how many separate places it has, but on how many different things each place can say.",
+     "mean": "A pixel that can only be lit or unlit carries one bit and can say nothing more than that something is there. The same pixel carrying 256 shades can say how many things are there. That is not decoration, it is a measurement placed where the eye already is, and it multiplies what a single frame can honestly carry without breaking the confusion limit at all, because the limit is about telling things apart and a shade tells you something a dot cannot.",
+     "real": "This is what games do and it is why they appear to show far more than a point field. A modern game pixel carries 24 to 96 bits across colour, depth, normal and material, and the geometry is culled hard before it ever reaches the screen. Unreal Engine 5's Nanite targets roughly one triangle per pixel and discards the rest, which is L12 arrived at independently by people shipping product. They are not beating the limit, they are obeying it and spending their bits better. The honesty condition is the whole of it: a shade must mean a stated, invertible quantity. Brightness standing for count is a measurement. Brightness standing for importance, or for nothing, is a decoration pretending to be one.",
+     "eq": "information per frame = elements &times; log&#8322;(states per element)",
+     "symbols": [
+      "<b>elements</b> the number of separate places, which on a screen is pixels.",
+      "<b>states per element</b> how many distinguishable values each place can take. Two for black and white, 256 for eight bit grey.",
+      "<b>log&#8322;</b> asks how many times you must double 1 to reach the number. Doubling 1 eight times gives 256, so log&#8322;(256) = 8, meaning eight bits.",
+      "So one million pixels at 1 bit carry one million bits. The same million at 8 bit grey carry eight million. Nothing about the geometry changed."
+     ],
+     "work": "One million pixels, binary: <b>1 million bits</b> per frame. The same pixels in 256 shades: <b>8 million bits</b>. A pixel holding 38,000 lines can state that number in a shade instead of being uniformly white and saying nothing at all, which turns the white flash back into a measurement.",
+     "wrong": "Show that a display with more states per element cannot carry more information per frame than the same display with fewer. Or find a shade on one of these pages that does not stand for a stated, invertible quantity.",
+     "keys": [
+      [
+       "information = elements &times; log2(states)",
+       "Shannon, A Mathematical Theory of Communication, 1948",
+       "published"
+      ],
+      [
+       "Nanite targets roughly one triangle per pixel",
+       "Unreal Engine 5 virtualised geometry; design target as documented by Epic",
+       "candidate"
+      ],
+      [
+       "a game pixel carries 24 to 96 bits",
+       "deferred rendering G-buffer layouts; range quoted from memory",
+       "candidate"
       ]
      ]
     }
