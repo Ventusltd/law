@@ -193,6 +193,7 @@
      "real": "Skin effect is only the part a single conductor does to itself. In a real trench the proximity effect from the adjacent phases, and the eddy and circulating currents induced in screens and armour, often matter more. That is the whole reason IEC 60287 exists and why it is not a one line calculation: the AC resistance you must use depends on the formation, the spacing, whether the screens are bonded at both ends, and what else is in the trench.",
      "eq": "&delta; = &radic;( 2&rho; &divide; (&omega;&mu;) )&nbsp;&nbsp;&nbsp;where&nbsp;&nbsp;&omega; = 2&pi;f",
      "symbols": [
+      "<b>&pi;</b> pi, about 3.1416: how many times the width of a circle fits round its edge. It turns up wherever something is round or goes round.",
       "<b>&delta;</b> the skin depth: the depth at which the current has fallen to about 37% of its value at the surface.",
       "<b>&rho;</b> resistivity, how strongly the metal resists. <b>&mu;</b> permeability, how the metal carries magnetism.",
       "<b>&omega;</b> angular frequency, which is the frequency <b>f</b> in hertz multiplied by 2&pi;, because the maths of anything rotating counts in radians.",
@@ -236,6 +237,7 @@
      "real": "A compacted conductor is not circles any more, which is the point of compacting it: the theoretical 0.9069 is the ceiling for round wires and compaction goes past it by deforming them. Real fill factor depends on the lay length, the wire tolerance and the compaction dies, so it is a manufacturing outcome, not a calculation. Trefoil's electrical reward also assumes the three cables actually touch and stay touching, which cleating and backfill decide, not the drawing.",
      "eq": "density = &pi; &divide; &radic;12 &asymp; 0.9069&nbsp;&nbsp;&nbsp;ring counts: 3n&sup2; + 3n + 1 = 1, 7, 19, 37, 61, 91",
      "symbols": [
+      "<b>&pi;</b> pi, about 3.1416: how many times the width of a circle fits round its edge. It turns up wherever something is round or goes round.",
       "<b>density</b> the fraction of the area actually filled by metal. 0.9069 means just over 90%, and the remaining 10% is unavoidable gap.",
       "<b>3n&sup2; + 3n + 1</b> the centred hexagonal numbers. Put n = 0, 1, 2, 3 and you get 1, 7, 19, 37: one wire, then a ring of 6 around it, then a ring of 12, then a ring of 18."
      ],
