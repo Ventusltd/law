@@ -806,6 +806,135 @@
      ]
     }
    ]
+  },
+  {
+   "name": "Counting the uncountable",
+   "laws": [
+    {
+     "id": "L21",
+     "title": "A law that runs backwards lets you count without visiting",
+     "say": "If the rule that places a thing can be run in reverse, then how many things lie in any region is a sum you can do in your head, and nothing in the region ever has to be looked at.",
+     "mean": "Every line ever written gets a number, its key, and is placed at a distance from the centre equal to the square root of that key. Run backwards, the key is the distance squared. So the number of keys between two circles is the outer distance squared minus the inner distance squared, and that is the whole calculation. This is why 37.93 billion lines can be drawn in milliseconds: a pixel holding 38,000 of them is not drawn 38,000 times, its count is worked out. It is Ramanujan's move. He and Hardy counted the ways of splitting a number into parts, an astronomically large set, by formula, without listing a single one.",
+     "real": "The formula is exact for whole rings and only nearly exact for a square pixel, which cuts a ring at an angle, so an unresolved pixel's count is right to within about one key, not to the key. That is declared on the page as computed from the law, not drawn. And it only works because nothing else decides position: the moment a second rule is allowed to nudge things for looks, the law no longer runs backwards and every count has to be done the slow way again. Beauty that breaks the inverse is paid for in arithmetic.",
+     "eq": "r = &radic;k&nbsp;&nbsp;&nbsp;so&nbsp;&nbsp;&nbsp;k = r&sup2;&nbsp;&nbsp;&nbsp;and&nbsp;&nbsp;&nbsp;keys between two circles = r&#8322;&sup2; &minus; r&#8321;&sup2;",
+     "symbols": [
+      "<b>k</b> the key: the number given to one line. The first line ever written is 0, the next is 1, and so on without end.",
+      "<b>r</b> the distance of that line from the centre of the wafer.",
+      "<b>&radic;</b> square root: the number which multiplied by itself gives what is inside. <b>r&sup2;</b> is r multiplied by itself, which undoes it.",
+      "<b>r&#8321;, r&#8322;</b> the inner and outer circle of whatever ring you are asking about."
+     ],
+     "work": "At full field one pixel near the rim spans about 432 units of distance at a radius of 150,000. Keys in that ring: 150,432&sup2; &minus; 150,000&sup2; = <b>129,786,624</b>. One subtraction, and the ring's 130 million lines are counted without touching one of them.",
+     "wrong": "Find any ring where counting the keys one by one disagrees with the outer distance squared minus the inner distance squared.",
+     "keys": [
+      [
+       "k = r&sup2; and the ring count",
+       "arithmetic, from the placement law",
+       "derived"
+      ],
+      [
+       "counting a vast set by formula",
+       "Hardy and Ramanujan, Asymptotic formulae in combinatory analysis, Proc. London Math. Soc. 17, 1918",
+       "published"
+      ],
+      [
+       "37,929,255,811 lines drawn from one 400 kB file in milliseconds",
+       "Ventusltd/kuiper-belt index.html; published as proof 1 on globalgrid2050.com, commit 99bb7965",
+       "measured"
+      ],
+      [
+       "the angle law: golden angle spacing of points on a disc",
+       "Vogel, A better way to construct the sunflower head, Mathematical Biosciences 44, 1979",
+       "published"
+      ]
+     ]
+    },
+    {
+     "id": "L22",
+     "title": "Silence is kept as space, and the space is measured",
+     "say": "Where nothing was written, numbers are left unissued, in proportion to how long the silence lasted, so the gaps you see between clusters of work are real gaps in time and not decoration.",
+     "mean": "This is what keeps space between things without anyone placing it there. Commits are put in the order time issued them, across every repository, and before each one a run of keys is skipped: so many keys for every second since the commit before. A night becomes a dark ring. A fortnight away becomes a wide one. The clusters are the working days and the void between them is the rest of life, and both are data. It also means a line not yet written already has an address waiting on the rim, the way an address in memory exists before anything is stored at it.",
+     "real": "Commit times are what git was told, not what a clock saw: a rebase rewrites them, machines disagree about the time, and robots that commit on the hour erase the nights of any repository they tend. So a dark ring proves a silence in the record, which is usually but not always a silence in the work. The rate of keys per second is a declared constant and is frozen, because a constant refitted on every run would move every key issued after it, and an address that moves is not an address.",
+     "eq": "keys skipped before a commit = G &times; min( seconds of silence, cap )",
+     "symbols": [
+      "<b>G</b> the declared rate, 600 keys for every second of silence. Chosen once, written down, not tuned.",
+      "<b>min( , )</b> whichever of the two is smaller. It stops one very long absence swallowing the whole picture.",
+      "<b>cap</b> fourteen days, in seconds. No silence counts for more than that."
+     ],
+     "work": "Across 9,940 commits from May 2025 to September 2026: <b>37,929,255,811</b> keys issued and <b>15,373,462,200</b> left unissued, so 28.84% of the wafer is measured silence. One ordinary night of eight hours is 28,800 seconds, which is 17,280,000 unissued keys, a ring you can see.",
+     "wrong": "Find a dark ring on the wafer that does not sit between two commit timestamps separated by the silence its width claims.",
+     "keys": [
+      [
+       "issued and unissued totals",
+       "tools/wafer_keys.py in Ventusltd/kuiper-belt, cosmos/wafer-meta.json, 2026-09-19",
+       "measured"
+      ],
+      [
+       "G = 600 keys per second, cap 14 days",
+       "declared constants in tools/wafer_keys.py; a choice, stated, not a measurement",
+       "derived"
+      ],
+      [
+       "an unissued number still has a place",
+       "the addressing law of the line wafer, lib.mjs place(key)",
+       "measured"
+      ]
+     ]
+    },
+    {
+     "id": "L23",
+     "title": "Keep a running total and any range is one subtraction",
+     "say": "If you write down the running total as you go, then how much lies between any two points is the later total minus the earlier one, however much lies between them.",
+     "mean": "This is how a key finds its commit among ten thousand without walking past the others, and how every pixel on the wafer knows what share of itself is work and what share is silence. The running totals are kept once. After that, finding where a number falls is a matter of halving the list until it is found, fourteen halvings for ten thousand commits, and the amount in any stretch is a single subtraction. Nothing scales with the size of what is being measured, only with how many times it can be halved.",
+     "real": "The running total must be exact or every answer after the first error is wrong by that error forever, which is why the tools here refuse when a level does not sum to the level above it rather than carrying on. On a graphics card the totals are held in a format good to about seven figures, so the wafer's shading is right to a few thousand keys in thirty seven billion while the addresses, which must be exact, are worked out separately in whole numbers.",
+     "eq": "amount between a and b = T(b) &minus; T(a)",
+     "symbols": [
+      "<b>T( )</b> the running total up to a point: everything counted so far.",
+      "<b>a, b</b> the two points you are asking between.",
+      "Finding which entry a number falls in is done by halving: look at the middle, keep the half it is in, repeat. Ten thousand entries take fourteen looks, a million take twenty."
+     ],
+     "work": "A random key among 53,302,718,011 addresses is traced to its commit in <b>14 comparisons</b>, to its file by walking that one commit, and to its text by opening one blob. The unattended proof does this about twice a second and stops at the first failure.",
+     "wrong": "Find any stretch where the later total minus the earlier total differs from adding the stretch up directly.",
+     "keys": [
+      [
+       "prefix sums and binary search",
+       "standard results; Knuth, The Art of Computer Programming, vol. 3",
+       "published"
+      ],
+      [
+       "keys followed to their text by tools/key.py --prove-until",
+       "E:/particles-runs/PROVE-KEYS.json on the measuring machine; Ventusltd/kuiper-belt tools/key.py",
+       "measured"
+      ]
+     ]
+    },
+    {
+     "id": "L24",
+     "title": "A number too big for its container loses its small digits, silently",
+     "say": "Every container for numbers holds only so many figures, and when a number outgrows it the smallest figures are dropped without any warning, so two different big numbers quietly become the same number.",
+     "mean": "The usual container on a graphics card holds about seven figures. The keys here run past thirty seven billion, which is eleven figures, so stored that way every key would be rounded to the nearest 4,096 and four thousand different lines would land on one spot. This happened: an early version drew every pass onto the same positions and looked correct. The cure is to do the part that must be exact in whole numbers that wrap around at a fixed size, where nothing is ever rounded, and to use the seven figure container only for things that can afford it, like a shade.",
+     "real": "This failure does not announce itself. The picture still looks like a picture and the total still prints. It is found only by asking whether two neighbouring keys really land in two places, which nobody does unless they already suspect. The same trap is in every spreadsheet that holds a long account number as a number, and in any energy total summed from many small readings in the wrong order.",
+     "eq": "a 32 bit float keeps 24 binary figures&nbsp;&nbsp;&nbsp;so beyond 2&sup2;&#8308; = 16,777,216 it can no longer count in ones",
+     "symbols": [
+      "<b>bit</b> one binary figure, a 0 or a 1.",
+      "<b>32 bit float</b> the graphics card's everyday number. Of its 32 bits, 24 hold the figures and the rest say where the point goes.",
+      "<b>2&sup2;&#8308;</b> two multiplied by itself twenty four times, which is 16,777,216: the largest stretch it can count one by one."
+     ],
+     "work": "At 37.9 billion the gap between neighbouring values a 32 bit float can hold is <b>4,096</b>. Keys 37,929,255,000 and 37,929,255,001 are the same number to it. In whole number arithmetic they differ by exactly one, always.",
+     "wrong": "Store 37,929,255,811 and 37,929,255,812 in 32 bit floats and find them different.",
+     "keys": [
+      [
+       "24 bit significand of single precision",
+       "IEEE 754-2019, binary32",
+       "standard"
+      ],
+      [
+       "the defect as it occurred",
+       "Ventusltd/cosmic, fixed in commit cc7a807: the ordinal does not fit in a float",
+       "measured"
+      ]
+     ]
+    }
+   ]
   }
  ]
 }
