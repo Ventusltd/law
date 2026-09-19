@@ -39,6 +39,11 @@ symbols that textbooks treat as too obvious to mention.
 | **L11** | Everything you see is the past | information carried faster than c |
 | **L12** | Past a certain crowding, things cannot be told apart | counting correctly beyond the confusion limit |
 | **L13** | Whatever you look at, everything else still exists | any frame where the three parts do not sum |
+| **L26** | A dot that answers to other dots is a gate, and gates compute | one wrong row of the truth table, or one wrong sum of 256, read from the cells |
+| **L27** | Memory is the history of the inputs; what it costs is time | a latch that forgets with no reset given |
+
+L14 to L25 are on the page (`index.html`) and in `laws.json`. L26 and L27 are tested by
+[Ventusltd/faraday](https://github.com/Ventusltd/faraday) entries 16 to 19: `node apparatus/cells.test.mjs`.
 
 ## Still to write
 

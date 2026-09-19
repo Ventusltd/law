@@ -65,7 +65,7 @@
   <li>The keys: where every number came from, and what happens if it has none.</li>
   <li>The sentence that holds the rest: every drop is the ocean, and the practice is to make one true drop before any ocean scale claim.</li>
 </ol>Notation is the last step and never the price of entry.</div>
-<p class="audit">25 laws &middot; 96 keys &middot; <b>24 marked candidate</b>, meaning quoted from memory or illustrative and not yet verified. Do not build on a candidate. The build refuses to publish a law missing any part or any key.</p>
+<p class="audit">27 laws &middot; 99 keys &middot; <b>24 marked candidate</b>, meaning quoted from memory or illustrative and not yet verified. Do not build on a candidate. The build refuses to publish a law missing any part or any key.</p>
 <main>
 <details class="area"><summary>Light</summary>
   <details class="nest"><summary>L1 &middot; One photon frees one electron, or none</summary>
@@ -760,6 +760,60 @@
     <table class="keys">
       <tr><td class="k">24 bit significand of single precision</td><td>IEEE 754-2019, binary32</td><td class="st st-standard">standard</td></tr>
       <tr><td class="k">the defect as it occurred</td><td>Ventusltd/cosmic, fixed in commit cc7a807: the ordinal does not fit in a float</td><td class="st st-measured">measured</td></tr>
+    </table>
+  </div>
+  </details>
+</details>
+<details class="area"><summary>Cells and programs</summary>
+  <details class="nest"><summary>L26 &middot; A dot that answers to other dots is a gate, and gates compute</summary>
+  <div class="body">
+    <p class="say">Give every dot one rule, let the rule of one dot depend on whether other dots were lit a moment earlier, and the dots can work out any sum that can be written down.</p>
+    <span class="lab">What it means</span>
+    <p class="t">A dot that is lit because somebody chose it is only a lamp. A dot that is lit UNLESS two other dots were both lit is a switch driven by other switches, which is exactly what a transistor gate in a processor is. One kind of such gate is enough: every other kind of logic can be built from it, and so can an adder, and from adders everything else. Nothing has to be stored in a dot for this. Its state at any moment is worked out from its key, the program and the time, the same on every machine.</p>
+    <span class="lab">In the real world</span>
+    <p class="r">This says what cells run by that rule can do. It does not say a page that shows dots is calculating anything: a picture of lit dots is a display until a rule of this kind is actually running behind it, and the engineering sums of this project are done by its calculation engine, not by the dots. The cost is real too. A sum needs many cells and takes many ticks, one tick per cell the carry has to cross, so it is a slow computer. And a program with a loop in it, where cells answer to each other, may never settle: it has to be started in a known state, exactly as silicon does.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">lit(c, t) = NOT ( lit(a, t &minus; 1) AND lit(b, t &minus; 1) )</div>
+    <ul class="sym">
+      <li><b>c</b> the cell being asked about. <b>a</b> and <b>b</b> the two cells its rule names.</li>
+      <li><b>t</b> the tick: time counted in whole steps. <b>t &minus; 1</b> the step before.</li>
+      <li><b>lit(c, t)</b> one if cell c is lit at tick t, nought if it is dark.</li>
+      <li><b>AND</b> true only when both are true. <b>NOT</b> turns true into false and false into true. Together they are the gate engineers call NAND.</li>
+      <li>At tick nought every gate cell is dark. Input cells are lit when the person using it says so.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">A half adder of <b>8</b> cells read from the dots: 0 and 0 give 0; 0 and 1 give 1; 1 and 0 give 1; 1 and 1 give sum 0 carry 1, which is two. A four bit adder of <b>69</b> cells got <b>256 of 256</b> sums right, 0 + 0 up to 15 + 15 = 30; the slowest settled at tick 16. The carry cell first lit exactly 2 ticks after its inputs, never sooner.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Run the command below and find one row of the truth table, or one of the 256 sums, that the cells get wrong; or find two machines that give different states for the same key, program and tick. Either ends the law.</p>
+    <span class="lab">Keys</span>
+    <table class="keys">
+      <tr><td class="k">half adder, four bit adder, propagation delay</td><td>Ventusltd/faraday, apparatus/cells.test.mjs; run: node apparatus/cells.test.mjs (Faraday entries 16, 17, 18)</td><td class="st st-measured">measured</td></tr>
+      <tr><td class="k">one gate is enough to build all logic</td><td>H. M. Sheffer, A set of five independent postulates for Boolean algebras, Transactions of the American Mathematical Society 14 (1913)</td><td class="st st-published">published</td></tr>
+    </table>
+  </div>
+  </details>
+  <details class="nest"><summary>L27 &middot; Memory is the history of the inputs; what it costs is time</summary>
+  <div class="body">
+    <p class="say">Dots can remember without anything being stored in any dot, because what they remember is already written in the history of what was done to them.</p>
+    <span class="lab">What it means</span>
+    <p class="t">Two gate cells that each answer to the other will hold a state: set them with a short pulse and they stay set long after the pulse has gone. Neither cell stores a thing. The state at any moment is worked out again from the record of the inputs, from the start to that moment. So the claim that nothing is stored per dot survives memory. What is paid instead is time: the later the moment asked about, the more working back there is to do.</p>
+    <span class="lab">In the real world</span>
+    <p class="r">Any real page would keep the last frame so as not to work everything out again. That is a cache: it can be thrown away and rebuilt from the program at any time, which is the difference between a cache and a stored bit. And a memory that is never put into a known state first does not settle; ours flickered lit, dark, lit, dark for ever until it was given a reset. Silicon has the same fault and the same cure.</p>
+    <span class="lab">The maths</span>
+    <div class="eq">state(t) = F( program, inputs from 0 to t )&nbsp;&nbsp;&nbsp;work &prop; t</div>
+    <ul class="sym">
+      <li><b>state(t)</b> whether the remembering cell is lit at tick t.</li>
+      <li><b>F</b> the working out: apply the rule of L26 backwards from tick t to tick nought.</li>
+      <li><b>inputs from 0 to t</b> the record of when set and reset were pressed. It belongs to the program, not to any cell.</li>
+      <li><b>&prop;</b> grows in step with: twice the ticks, about twice the work.</li>
+    </ul>
+    <span class="lab">A worked number</span>
+    <p class="work">Reset held for ticks 0 to 5; a set pulse for ticks 10 to 13; read at tick 39, which is <b>26 ticks after the pulse ended: still lit</b>. A reset pulse at ticks 40 to 43; read at tick 60: dark. With no cache the working asked <b>25</b> questions for tick 12 and <b>49</b> for tick 24. Never reset: 1, 0, 1, 0, 1, 0, 1, 0.</p>
+    <span class="lab">How to show it is wrong</span>
+    <p class="wrong">Show the latch forgetting: lit by the set pulse and dark again with no reset given. Or show that the state at a tick cannot be recovered from the program and the input record alone.</p>
+    <span class="lab">Keys</span>
+    <table class="keys">
+      <tr><td class="k">the latch, its flicker, and the cost</td><td>Ventusltd/faraday, apparatus/cells.test.mjs; run: node apparatus/cells.test.mjs (Faraday entry 19)</td><td class="st st-measured">measured</td></tr>
     </table>
   </div>
   </details>
